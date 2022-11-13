@@ -1,16 +1,12 @@
 # hashGo
 
-<div align="center">
-
-[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)
-
-[![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/zeropio/hashGo)](https://github.com/gomods/athens)
-
-[![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+<p align="center">
+<img src="https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff">
+<img src="https://img.shields.io/github/go-mod/go-version/zeropio/hashGo">
+<img src="https://badges.frapsoft.com/os/v1/open-source.png?v=103">
+</p>
 
 ![Image](/img/hashgo.gif)
-
-</div>
 
 ---
 
