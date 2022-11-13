@@ -5,25 +5,30 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+
 	"strings"
 	"unsafe"
 
 	"github.com/labstack/gommon/color"
 )
 
+var passLines []string
+
 func Ntlm(hash string, wordlist io.Reader) {
 
     // Hash each wordlist line and compare it with the hash
     readFile := bufio.NewScanner(wordlist)
     readFile.Split(bufio.ScanLines)
+    
     for readFile.Scan() {
         line := readFile.Text()
         pass := ntlmgen(line)
-
         if (pass == strings.ToLower(hash)) {
             fmt.Printf(color.Cyan("The password is: ") + color.Green(line) + "\n")
-
+        } else {
+            continue
         }
+        break
     }
     fmt.Printf(color.Cyan("Cracking for ") + color.Yellow(hash) + color.Cyan(" ended\n"))
 }

@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+    "strings"
 
 	"github.com/labstack/gommon/color"
 )
@@ -22,10 +23,12 @@ func Sh1(hash string, wordlist io.Reader) {
         hashString := hex.EncodeToString(hasher.Sum(nil))
         pass := string(hashString[:])
 
-        if (pass == hash) {
+        if (pass == strings.ToLower(hash)) {
             fmt.Printf(color.Cyan("The password is: ") + color.Green(line) + "\n")
-
+        } else {
+            continue
         }
+        break
     }
     fmt.Printf(color.Cyan("Cracking for ") + color.Yellow(hash) + color.Cyan(" ended\n"))
 }

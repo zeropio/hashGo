@@ -1,6 +1,6 @@
 # hashGo
 
-<p align="center"> Hash Cracker with Go </p>
+<div align="center">
 
 [![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)
 
@@ -8,7 +8,9 @@
 
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-![Image](/img/demo.gif)
+![Image](/img/hashgo.gif)
+
+</div>
 
 ---
 
