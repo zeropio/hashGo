@@ -33,14 +33,12 @@ hashgo -f <HASH FILE> -w <WORDLIST> -h <HASH TYPE>
 
 For now, these are the supported hashes:
 
-<p align="center">
 | **Hash** | **Flag** |
 | -------- | -------- |
 | MD5 | `-h md5` |
 | MD4 | `-h md4` |
 | NTLM | `-h ntlm` |
 | SHA1 | `-h sha1` |
-</p>
 
 ---
 
