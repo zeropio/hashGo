@@ -12,23 +12,23 @@
 
 # Installation
 
-In order to install it and build it we need Go:
+To build it we need Go. Then:
 ```
 git clone https://github.com/zeropio/hashGo
 cd hashGo; go build .
 ```
 
-And then move the binary to some path you use.
-
 Or download it from [releases](https://github.com/zeropio/hashGo/releases).
+
+And then move the binary to any path you use. 
 
 ---
 
 # Usage
 
-To use it we need to pass a file with the hash (or hashes), a wordlist and select the mode:
+Pass a hash, a wordlist and select the mode:
 ```
-hashgo -f <HASH FILE> -w <WORDLIST> -h <HASH TYPE>
+hashgo -f <HASH> -w <WORDLIST PATH> -t <HASH TYPE>
 ```
 
 For now, these are the supported hashes:
