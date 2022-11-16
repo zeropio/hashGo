@@ -10,19 +10,26 @@ import (
 )
 
 func flagHelp() {
-    fmt.Printf(color.Cyan("Files\n"))
+    fmt.Printf(color.Cyan("\nHash\n"))
     fmt.Printf(`-f file
     Path to the file with hashes`)
     fmt.Printf("\n")
     fmt.Printf(`-w wordlist
     Path to the wordlist`)
+    fmt.Printf("\n")
+
     fmt.Printf(color.Cyan("\nHashes\n"))
     fmt.Printf(`-t type
     Select the type of hash (md5, sha1, ntlm,...). Lowercase`)
     fmt.Printf(color.Cyan("\nOther\n"))
+    fmt.Printf(`-v
+    Print verbose. Print tested passwords`)
+    fmt.Printf("\n")
     fmt.Printf(`-h
     Print help`)
-    fmt.Printf(color.Cyan("\nBy Zeropio\n"))
+    fmt.Printf("\n")
+
+    fmt.Printf(color.Cyan("\nBy Zeropio\n") + color.Red("with Love"))
 }
 
 func main() {
@@ -32,6 +39,7 @@ func main() {
     // Flags
     input := flag.String("f", "", "Input the hash")
     wordlist := flag.String("w", "", "Select the wordlist it will use")
+    verbose := flag.Bool("v", false, "Set verbose (print tested password)")
     hType := flag.String("t", "", "Select your hash type")
     flag.BoolVar(&help, "h", false, "Print help")
     flag.Parse()
@@ -53,13 +61,13 @@ func main() {
     // Select hash and send with the wordlist
     switch {
     case string(*hType) == "md5":
-        h.Md5(*input, wFile)
+        h.ToMD5(*input, wFile, *verbose)
     case string(*hType) == "md4":
-        h.Md4(*input, wFile)
+        h.ToMD4(*input, wFile, *verbose)
     case string(*hType) == "sha1":
-        h.Sh1(*input, wFile)
+        h.ToSH1(*input, wFile, *verbose)
     case string(*hType) == "ntlm":
-        h.Ntlm(*input, wFile)
+        h.ToNTLM(*input, wFile, *verbose)
     default:
         fmt.Printf(color.Red("Please select a valid hash tpye\n"))
         flagHelp()

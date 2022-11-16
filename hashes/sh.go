@@ -11,7 +11,7 @@ import (
 	"github.com/labstack/gommon/color"
 )
 
-func Sh1(hash string, wordlist io.Reader) {
+func ToSH1(hash string, wordlist io.Reader, verbose bool) {
 
     // Hash each wordlist line and compare it with the hash
     readFile := bufio.NewScanner(wordlist)
@@ -26,6 +26,9 @@ func Sh1(hash string, wordlist io.Reader) {
         if (pass == strings.ToLower(hash)) {
             fmt.Printf(color.Cyan("The password is: ") + color.Green(line) + "\n")
         } else {
+            if verbose {
+                fmt.Printf(color.Red("[-]") + color.Red(line) + "\n")
+            }
             continue
         }
         break
